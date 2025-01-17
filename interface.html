@@ -1,0 +1,223 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pneumonia Detection</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        input { margin: 20px; }
+        img { width: 300px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h2>Pneumonia Detection</h2>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <input type="submit" value="Upload & Predict">
+    </form>
+
+    {% if result %}
+        <h3>Result: {{ result }}</h3>
+    {% endif %}
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pneumonia Detection</title>
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            margin-top: 50px;
+            font-size: 2rem;
+            color: #2c3e50;
+        }
+
+        form {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        input[type="file"] {
+            display: block;
+            margin: 10px auto 20px auto;
+            font-size: 1rem;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+        h3 {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: #27ae60;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        img {
+            width: 300px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Pneumonia Detection</h2>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <input type="submit" value="Upload & Predict">
+    </form>
+
+    {% if result %}
+        <h3>Result: {{ result }}</h3>
+    {% endif %}
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pneumonia Detection</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: url('https://images.unsplash.com/photo-1616012480717-fd9867059ca0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fHglMjByYXl8ZW58MHx8MHx8fDA%3D') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h2 {
+            margin-top: 50px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        form {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        input[type="file"], input[type="submit"] {
+            display: block;
+            margin: 10px auto 20px auto;
+            font-size: 1rem;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+        h3 {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 1s forwards;
+        }
+
+        .result-normal {
+            color: #27ae60; /* Green for Normal */
+        }
+
+        .result-pneumonia {
+            color: #e74c3c; /* Red for Pneumonia */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Pneumonia Detection</h2>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <input type="submit" value="Upload & Predict">
+    </form>
+
+    {% if result %}
+        <h3 class="{{ 'result-normal' if result == 'Normal' else 'result-pneumonia' }}">
+            Result: {{ result }}
+        </h3>
+    {% endif %}
+</body>
+</html>
